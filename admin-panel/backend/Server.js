@@ -14,6 +14,16 @@ app.get("/", (req, res) => {
   res.send("Server Running - Admin Panel");
 });
 
+
+app.get("/getBlogs", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM bolgadata");
+    res.json(result);
+  } catch (error) {
+    console.error("Error Fetching Blogs", error);
+  }
+});
+
 app.post("/postBlog", async (req, res) => {
   try {
     const { date, category, title, content } = req.body;

@@ -1,44 +1,39 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 
 function Blogs() {
+  const [blogs, setBlogs] = useState([]);
+
+  const getBlogs = async () => {
+    try {
+      const response = await fetch(
+        "https://yashraj-blogs.onrender.com/getBlogs"
+      );
+      const jsonData = await response.json();
+      setBlogs(jsonData);
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+  useEffect(() => {
+    getBlogs();
+  }, []);
   return (
     <>
       <div className="blogs-container">
-        <div className="blog">
-          <p className="date">
-            04/04/2024 <span style={{ float: "right" }}>Category - CODING</span>
-          </p>
-          <h1 className="blog-title">This is my first blog.</h1>
-          <p className="blog-content">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Necessitatibus sunt explicabo expedita! Velit, natus eos veniam,
-            numquam perferendis maxime quasi error doloribus libero facere unde
-            eveniet debitis ipsam expedita. Quos asperiores, rem ab atque odit a
-            dolorum provident quas quis officia? Quo necessitatibus incidunt
-            tempora beatae libero recusandae ab repellat dolorum voluptatem
-            autem, perspiciatis, cumque adipisci molestiae eum illum!
-            Asperiores.
-          </p>
-          <button className="blog-btn">READ MORE</button>
-          <hr />
-        </div>
-
-        <div className="blog">
-          <p className="date">04-04-2024</p>
-          <h1 className="blog-title">This is my first blog.</h1>
-          <p className="blog-content">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Necessitatibus sunt explicabo expedita! Velit, natus eos veniam,
-            numquam perferendis maxime quasi error doloribus libero facere unde
-            eveniet debitis ipsam expedita. Quos asperiores, rem ab atque odit a
-            dolorum provident quas quis officia? Quo necessitatibus incidunt
-            tempora beatae libero recusandae ab repellat dolorum voluptatem
-            autem, perspiciatis, cumque adipisci molestiae eum illum!
-            Asperiores.
-          </p>
-          <button className="blog-btn">READ MORE</button>
-          <hr />
-        </div>
+        {blogs.map((blogItem) => {
+          <div className="blog" key={blogItem.id} id={blogItem.id}>
+            <p className="date">
+              {blogItem.date}
+              <span style={{ float: "right" }}>{blogItem.category}</span>
+            </p>
+            <h1 className="blog-title">{blogItem.title}</h1>
+            <p className="blog-content">{blogItem.content}</p>
+            <button className="blog-btn">READ MORE</button>
+            <hr />
+          </div>;
+        })}
       </div>
     </>
   );
