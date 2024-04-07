@@ -23,7 +23,7 @@ function HomePage() {
         content: formData.content,
       };
       const response = await fetch(
-        "https://yashraj-blogs.onrender.com",
+        "https://yashraj-blogs.onrender.com/postBlog",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
