@@ -1,0 +1,134 @@
+body {
+  top: 0;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.App {
+  top: 0;
+}
+
+nav {
+  height: 11vh;
+  width: 100vw;
+  background-color: #fff;
+}
+
+.left {
+  display: inline-block;
+  height: 11vh;
+}
+
+.left > img {
+  height: 8vh;
+  margin: 10px 5px 5px 5rem;
+}
+
+.right {
+  float: right;
+  height: 11vh;
+  width: 40vw;
+}
+
+.right > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6vh;
+  text-align: center;
+}
+
+ul > li {
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+  line-height: 1.1rem;
+  font-size: 1.1rem;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-family: "Roboto Mono", monospace;
+}
+
+li:hover {
+  cursor: pointer;
+  border-radius: 5px;
+  color: whitesmoke;
+  background: linear-gradient(90deg, rgb(239, 65, 45), rgb(79, 41, 32));
+}
+
+a:hover {
+  color: whitesmoke;
+}
+
+/* HOME CSS STARTS */
+.home {
+  width: 100vw;
+  height: 50vh;
+  background: linear-gradient(90deg, rgb(239, 65, 45), rgb(79, 41, 32));
+}
+
+.txt {
+  height: 30vh;
+  width: 24vw;
+  display: inline-block;
+  margin: 6rem 0 0 20rem;
+}
+
+.txt > h1 {
+  color: whitesmoke;
+  line-height: 5rem;
+  font-size: 4rem;
+  font-family: "Exo", sans-serif;
+}
+
+/* BLOGS SECTION CSS STARTS HERE */
+
+.blogs-container {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.blog {
+  width: 40vw;
+  height: 25rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  margin: 3rem 3rem 3rem 5rem;
+  /* box-shadow: -5px -5px #dcd9d9; */
+}
+
+.date {
+  margin-bottom: 2rem;
+  font-family: "Exo", sans-serif;
+}
+
+.blog-title {
+  font-size: 2.2rem;
+  font-family: "Roboto Mono", monospace;
+}
+
+.blog-content {
+  font-family: "Work Sans", sans-serif;
+}
+
+.blog-btn {
+  height: 3rem;
+  width: 8rem;
+  background: transparent;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+footer {
+  margin-top: 10rem;
+  margin-bottom: 1rem;
+  bottom: 0;
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+}
