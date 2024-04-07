@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
 
 app.get("/getBlogs", async (req, res) => {
   try {
-    const result = await pool.query("SELECT * FROM bolgadata");
+    const result = await pool.query("SELECT * FROM blogadata");
     res.json(result);
   } catch (error) {
     console.error("Error Fetching Blogs", error);

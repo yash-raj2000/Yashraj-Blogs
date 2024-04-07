@@ -1,6 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Blogs() {
   const [blogs, setBlogs] = useState([]);
@@ -16,13 +14,15 @@ function Blogs() {
       console.error(error.message);
     }
   };
+
   useEffect(() => {
     getBlogs();
   }, []);
+
   return (
     <>
       <div className="blogs-container">
-        {blogs.map((blogItem) => {
+        {blogs.map((blogItem) => (
           <div className="blog" key={blogItem.id} id={blogItem.id}>
             <p className="date">
               {blogItem.date}
@@ -32,8 +32,8 @@ function Blogs() {
             <p className="blog-content">{blogItem.content}</p>
             <button className="blog-btn">READ MORE</button>
             <hr />
-          </div>;
-        })}
+          </div>
+        ))}
       </div>
     </>
   );
