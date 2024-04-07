@@ -23,7 +23,7 @@ function HomePage() {
         content: formData.content,
       };
       const response = await fetch(
-        "https://yashraj-blogs.onrender.com/postBlog",
+        "https://yashraj-blogs.onrender.com",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -32,6 +32,7 @@ function HomePage() {
       );
       if (response.ok) {
         // eslint-disable-next-line
+        console.log("data sent to server");
         const responseData = await response.json(); // Parse the response body as JSON
         setFormData({
           date: "",
@@ -39,6 +40,7 @@ function HomePage() {
           title: "",
           content: "",
         });
+        console.log(responseData);
       } else {
         console.log(
           "Failed to send data",
@@ -80,7 +82,6 @@ function HomePage() {
             name="content"
             value={formData.content}
             onChange={handleChange}
-            id=""
             cols="30"
             rows="10"
             placeholder="Blog content*"

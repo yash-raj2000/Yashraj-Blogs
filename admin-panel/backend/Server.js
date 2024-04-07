@@ -14,13 +14,14 @@ app.get("/", (req, res) => {
   res.send("Server Running - Admin Panel");
 });
 
-app.post("/postBlog", async (req, res) => {
+app.post("/", async (req, res) => {
   try {
     const { date, category, title, content } = req.body;
     const result = await pool.query(
       "INSERT INTO blogdata (date, category title, content) VALUES ($1, $2, $3, $4) RETURNING *",
       [date, category, title, content]
     );
+    console.log(result);
     res.json(result.rows[0]);
   } catch (error) {
     console.error(error.message);
