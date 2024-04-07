@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 function HomePage() {
   const [formData, setFormData] = useState({
+    date: "",
+    category: "",
     title: "",
     content: "",
-    category: "",
-    date: "",
   });
 
   const handleChange = (e) => {
@@ -17,13 +17,13 @@ function HomePage() {
     e.preventDefault();
     try {
       const body = {
+        date: formData.date,
+        category: formData.category,
         title: formData.title,
         content: formData.content,
-        category: formData.category,
-        date: formData.date,
       };
       const response = await fetch(
-        "https://server-portfolio-rn5j.onrender.com/postBlog",
+        "https://yashraj-blogs.onrender.com/postBlog",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -34,10 +34,10 @@ function HomePage() {
         // eslint-disable-next-line
         const responseData = await response.json(); // Parse the response body as JSON
         setFormData({
+          date: "",
+          category: "",
           title: "",
           content: "",
-          category: "",
-          date: "",
         });
       } else {
         console.log(
