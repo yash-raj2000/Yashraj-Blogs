@@ -42,7 +42,7 @@ app.get("/getBlogs", async (req, res) => {
   }
 });
 
-app.get(`/getBlogs/${id}`, async (req, res) => {
+app.get(`/getBlogs/:id`, async (req, res) => {
   const { id } = req.params;
   try {
     const result = await pool.query(`SELECT * FROM blogadata WHERE id = $1`, [
