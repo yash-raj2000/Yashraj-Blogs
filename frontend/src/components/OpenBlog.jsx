@@ -1,5 +1,5 @@
 // import React from "react";
-// import Navbar from "./Navbar";
+import Navbar from "./Navbar";
 
 // function OpenBlog() {
 //   return (
@@ -32,7 +32,11 @@ function OpenBlog() {
           throw new Error("Failed to fetch blog");
         }
         const jsonData = await response.json();
-        setBlog(jsonData);
+        if (Array.isArray(jsonData) && jsonData.length > 0) {
+          setBlog(jsonData[0]); // Assuming the first item in the array is the blog data
+        } else {
+          throw new Error("No blog data found");
+        }
       } catch (error) {
         console.error(error.message);
       }
@@ -46,10 +50,13 @@ function OpenBlog() {
   }
 
   return (
-    <div className="showBlog">
-      <h1>{blog.title}</h1>
-      <p>{blog.content}</p>
-    </div>
+    <>
+      <Navbar />
+      <div className="showBlog">
+        <h1>{blog.title}</h1>
+        <p>{blog.content}</p>
+      </div>
+    </>
   );
 }
 

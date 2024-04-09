@@ -85,7 +85,7 @@ function Blogs() {
           </p>
           <h1 className="blog-title">{blogItem.title} </h1>
           <p className="blog-content">{blogItem.content.slice(0, 100)}... </p>
-          <Link to={`/blog/${blogItem.id}`} className="blog-btn">
+          <Link to={`/getBlogs/${blogItem.id}`} className="blog-btn">
             Read More
           </Link>
           <hr />
