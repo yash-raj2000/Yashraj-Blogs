@@ -252,7 +252,7 @@ footer > span {
   .right {
     float: right;
     width: 15vw;
-    margin-top: 0.4rem;
+    margin-top: -0.4rem;
   }
 
   .txt {

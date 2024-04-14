@@ -14,6 +14,10 @@ function Blogs() {
       );
       const jsonData = await response.json();
       const blogsData = jsonData.rows; // Extract blog data from the "rows" property
+
+      // Sort blogs by date in descending order
+      blogsData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
       setBlogs(blogsData);
     } catch (error) {
       console.error(error.message);
