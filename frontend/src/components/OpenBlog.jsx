@@ -1,22 +1,6 @@
-// import React from "react";
-import Navbar from "./Navbar";
-
-// function OpenBlog() {
-//   return (
-//     <>
-//           <Navbar />
-//           <div className="showBlog">
-//               <h1>Heading</h1>
-//               <p>Content</p>
-//           </div>
-//     </>
-//   );
-// }
-
-// export default OpenBlog;
-
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Navbar from "./Navbar";
 
 function OpenBlog() {
   const { id } = useParams();
@@ -46,15 +30,39 @@ function OpenBlog() {
   }, [id]);
 
   if (!blog) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <button class="btn btn-primary" type="button" disabled>
+          <span
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
+          Loading...
+        </button>
+      </div>
+    );
   }
 
   return (
     <>
       <Navbar />
       <div className="showBlog">
-        <h1>{blog.title}</h1>
-        <p>{blog.content}</p>
+        <div className="dateCat">
+          <div className="left-d">
+            Date Posted:{" "}
+            {new Date(blog.date).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
+          </div>
+          <div className="right-d">Blog Category: {blog.category}</div>
+        </div>
+        <div className="titleCont">
+          <h1>{blog.title}</h1>
+          <p style={{ whiteSpace: "pre-wrap" }}>{blog.content}</p>
+        </div>
       </div>
     </>
   );

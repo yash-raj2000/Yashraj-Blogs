@@ -6,7 +6,7 @@ function Footer() {
   return (
     <>
       <footer>
-        <span style={{ fontSize: "20px", marginBottom: "5px" }}>&#169; </span>
+        <span>&#169; </span>
         COPYRIGHT {currenYear}- Yashraj Singh
       </footer>
     </>

@@ -5,7 +5,7 @@ function Home() {
     <>
       <div className="home">
         <div className="txt">
-          <h1>HELLO WORLD</h1>
+          <h1>HELLO WORLD </h1>
         </div>
       </div>
     </>

@@ -85,6 +85,7 @@ function HomePage() {
             cols="30"
             rows="10"
             placeholder="Blog content*"
+            
           ></textarea>
           <button onClick={publishBlog}>PUBLISH</button>
         </form>

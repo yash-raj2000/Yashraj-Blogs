@@ -42,7 +42,6 @@ app.post("/postBlog", async (req, res) => {
       "INSERT INTO blogadata (date, category, title, content) VALUES ($1, $2, $3, $4) RETURNING *",
       [date, category, title, content]
     );
-    console.log(result);
     res.json(result.rows[0]);
   } catch (error) {
     console.error(error.message);
