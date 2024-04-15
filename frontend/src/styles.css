@@ -230,6 +230,11 @@ footer > span {
 
   .body {
     width: 27rem;
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 27rem;
   }
 
   .navbar {
@@ -294,11 +299,12 @@ footer > span {
 
   .blogs-container {
     width: 27rem;
+    justify-content: center;
   }
 
   .blog {
     width: 25rem;
-    height: 33rem;
+    height: 35rem;
     overflow-y: hidden;
     margin: 2rem 0rem 2rem 0rem;
   }
@@ -334,7 +340,8 @@ footer > span {
   }
 
   .blog-title {
-    height: 8.5rem;
+    height: 9rem;
+    font-size: 2rem;
   }
 
   .titleCont {
