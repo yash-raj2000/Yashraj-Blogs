@@ -224,19 +224,23 @@ footer > span {
 /* FOR NAVBAR */
 
 @media only screen and (max-width: 426px) {
+  * {
+    overflow-x: hidden;
+  }
+
   nav {
     display: none;
   }
 
-  body {
-    width: 27rem;
+  .body {
     overflow-x: hidden;
+    width: 27rem;
   }
 
   .navbar {
     display: block;
     width: 27rem;
-    height: 4.5rem;
+    height: 4rem;
   }
 
   .left {
@@ -252,7 +256,7 @@ footer > span {
   .right {
     float: right;
     width: 15vw;
-    margin-top: -0.4rem;
+    margin-top: -1rem;
   }
 
   .txt {
@@ -280,7 +284,7 @@ footer > span {
   }
 
   .txt {
-    height: 30vh;
+    height: 10rem;
     width: 15rem;
     display: inline-block;
     margin: 4rem 0 0 2rem;
@@ -299,7 +303,8 @@ footer > span {
 
   .blog {
     width: 25rem;
-    height: 27rem;
+    height: 33rem;
+    overflow-y: hidden;
     margin: 2rem 0rem 2rem 0rem;
   }
 
@@ -331,6 +336,10 @@ footer > span {
     margin: auto;
     width: 45vw;
     text-align: center;
+  }
+
+  .blog-title {
+    height: 8.5rem;
   }
 
   .titleCont {

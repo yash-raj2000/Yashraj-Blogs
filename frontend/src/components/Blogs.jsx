@@ -30,39 +30,41 @@ function Blogs() {
 
   return (
     <>
-      <Navbar />
-      <Home />
-      <div className="blogs-container">
-        {blogs.map((blogItem) => (
-          <div className="blog" key={blogItem.id} id={blogItem.id}>
-            <p className="date">
-              {new Date(blogItem.date).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-              })}
-              <span style={{ float: "right" }}>
-                Category: {blogItem.category}
-              </span>
-            </p>
-            <h1 className="blog-title">{blogItem.title.slice(0, 45)}... </h1>
-            <p className="blog-content" style={{ whiteSpace: "pre-wrap" }}>
-              {blogItem.content.slice(0, 200)}...{" "}
-            </p>
-            <Link to={`/getBlogs/${blogItem.id}`} className="blog-btn">
-              Read More...
-            </Link>
-            <hr
-              style={{
-                marginTop: "2rem",
-                height: "1px",
-                backgroundColor: "black",
-              }}
-            />
-          </div>
-        ))}
+      <div className="body">
+        <Navbar />
+        <Home />
+        <div className="blogs-container">
+          {blogs.map((blogItem) => (
+            <div className="blog" key={blogItem.id} id={blogItem.id}>
+              <p className="date">
+                {new Date(blogItem.date).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}
+                <span style={{ float: "right" }}>
+                  Category: {blogItem.category}
+                </span>
+              </p>
+              <h1 className="blog-title">{blogItem.title.slice(0, 45)}... </h1>
+              <p className="blog-content" style={{ whiteSpace: "pre-wrap" }}>
+                {blogItem.content.slice(0, 200)}...{" "}
+              </p>
+              <Link to={`/getBlogs/${blogItem.id}`} className="blog-btn">
+                Read More...
+              </Link>
+              <hr
+                style={{
+                  marginTop: "2rem",
+                  height: "1px",
+                  backgroundColor: "black",
+                }}
+              />
+            </div>
+          ))}
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }
